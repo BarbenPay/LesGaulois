@@ -2,9 +2,9 @@ package personnages;
 
 public class Gaulois {
 
-	String name;
+	private String name;
 	
-	int strength;
+	private int strength;
 	
 	public Gaulois(String name, int strength) {
 		
@@ -16,6 +16,25 @@ public class Gaulois {
 	
 	public String getName(){
 		return(name);
+	}
+	
+	public void parler(String sentenceToWrite){
+		
+		System.out.println("Le gaulois " + this.getName() + " : \"" + sentenceToWrite + "\"");
+		
+	}
+	
+	
+	
+	
+	
+	
+	public static void main(String[] args) {
+		
+		Gaulois asterix = new Gaulois("Astérix", 8);
+		
+		System.out.println(asterix.getName());
+		
 	}
 	
 }
