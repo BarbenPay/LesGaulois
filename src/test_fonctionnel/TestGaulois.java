@@ -22,7 +22,9 @@ public class TestGaulois {
 		}*/
 		
 		asterix.frapper(minus);
+		minus.frapper(asterix);
 		asterix.frapper(minus);
+		minus.frapper(asterix);
 		asterix.frapper(minus);
 	}
 

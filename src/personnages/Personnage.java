@@ -29,7 +29,7 @@ public abstract class Personnage {
 	
 	public void frapper(Personnage personnage) {
 		
-		System.out.println(this.getName() + " envoie un grand coup dans la mâchoire de " + personnage.getName() + ".");
+		System.out.println("Le " + this.getAuteur() + " " + this.getName() + " envoie un grand coup dans la mâchoire du " + personnage.getAuteur()+ " " +personnage.getName() + ".");
 		personnage.recevoirCoup(this.strength/3);
 		
 	}
