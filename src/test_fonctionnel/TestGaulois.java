@@ -1,31 +1,38 @@
 package test_fonctionnel;
 
-import personnages.Gaulois;
-import personnages.Romain;
+import personnages.*;
+
 
 public class TestGaulois {
 
 	public static void main(String[] args) {
 		
-		Gaulois asterix = new Gaulois("Astérix", 8);
+		Gaulois Vercingétorix = new Gaulois("Vercingétorix", 5);
 		
-		System.out.println(asterix.getName());
+		Village village = new Village(Vercingétorix);
 		
-		asterix.parler("Salut tout le monde");
+		Soldat minus = new Soldat("Minus", 6, Grade.SOLDAT);
 		
-		Romain minus = new Romain("Minus", 6);
+		Camp camp = new Camp(minus);
 		
-		minus.parler("UN GAU… UN GAUGAU…");
 		
-		/*for(int  i = 0; i < 2; i++) {
-			minus.recevoirCoup(3);
-		}*/
+		village.ajouterGaulois(new Gaulois("Agecanonix", 1));
+		village.ajouterGaulois(new Gaulois("Assurancetourix", 2));
+		village.ajouterGaulois(new Gaulois("Astérix", 5));
+		village.ajouterGaulois(new Gaulois("Obelix", 15));
+		village.ajouterGaulois(new Gaulois("Prolix", 2));
 		
-		asterix.frapper(minus);
-		minus.frapper(asterix);
-		asterix.frapper(minus);
-		minus.frapper(asterix);
-		asterix.frapper(minus);
+		
+		camp.ajouterSoldat(new Soldat("Brutus", 5, Grade.CENTURION));
+		camp.ajouterSoldat(new Soldat("Milexcus", 6, Grade.SOLDAT));
+		camp.ajouterSoldat(new Soldat("Tullius Octopus", 2, Grade.TESSERARIUS));
+		camp.ajouterSoldat(new Soldat("Ballondebaudrus", 3, Grade.OPTIO));
+		
+		village.afficherVillage();
+		camp.afficherCamp();
+		
+		
+		
 	}
 
 }
