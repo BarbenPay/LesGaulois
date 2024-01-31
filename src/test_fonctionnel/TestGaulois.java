@@ -7,9 +7,9 @@ public class TestGaulois {
 
 	public static void main(String[] args) {
 		
-		Gaulois VercingÃ©torix = new Gaulois("VercingÃ©torix", 5);
+		Gaulois Vercingétorix = new Gaulois("Vercingétorix", 5);
 		
-		Village village = new Village(VercingÃ©torix);
+		Village village = new Village(Vercingétorix);
 		
 		Soldat minus = new Soldat("Minus", 6, Grade.SOLDAT);
 		
@@ -18,7 +18,7 @@ public class TestGaulois {
 		
 		village.ajouterGaulois(new Gaulois("Agecanonix", 1));
 		village.ajouterGaulois(new Gaulois("Assurancetourix", 2));
-		village.ajouterGaulois(new Gaulois("AstÃ©rix", 5));
+		village.ajouterGaulois(new Gaulois("Astérix", 5));
 		village.ajouterGaulois(new Gaulois("Obelix", 15));
 		village.ajouterGaulois(new Gaulois("Prolix", 2));
 		
@@ -31,7 +31,13 @@ public class TestGaulois {
 		village.afficherVillage();
 		camp.afficherCamp();
 		
+		Gaulois Abraracourcix = new Gaulois("Abraracourcix", 5);
+		Soldat Briseradius = new Soldat("Briseradius",4,Grade.SOLDAT);
+		Soldat Chorus = new Soldat ("Chorus",4,Grade.CENTURION);
 		
+		village.changerChef(Abraracourcix);
+		camp.changerCommandant(Briseradius);
+		camp.changerCommandant(Chorus);
 		
 	}
 
