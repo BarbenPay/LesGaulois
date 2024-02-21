@@ -32,13 +32,13 @@ public class Village {
 		
 		}else{
 			
-			this.getChef().parler("Désolé " + gaulois.getName() + " mon village est déjà bien rempli.");
+			this.getChef().parler("Desole " + gaulois.getName() + " mon village est deja bien rempli.");
 			
 		}
 	}
 	
 	public void afficherVillage() {
-		System.out.println("Le village de " + this.getChef().getName() + " est habité par:");
+		System.out.println("Le village de " + this.getChef().getName() + " est habite par:");
 		for(int i = 0; i<nbVillageois;i++) {
 			System.out.println(villageGaulois[i].getName());
 		}
@@ -48,6 +48,15 @@ public class Village {
 		chef.parler("Je laisse mon grand bouclier au grand " + gaulois.getName());
 		gaulois.parler("Merci !");
 		this.chef = gaulois;
+	}
+
+	public Gaulois getGaulois(String name){
+		for(int i = 0; i < nbVillageois; i++){
+			if(this.villageGaulois[i].getName().equals(name)){
+				return this.villageGaulois[i];
+			}
+		}
+		return null;
 	}
 	
 	

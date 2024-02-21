@@ -10,4 +10,16 @@ public class Potion {
 		this.quantity = quantity;
 	}
 
+	public int usePotionAndGetStrength(){
+		if (this.quantity != 0) {
+			this.quantity -= 1;
+			return this.strength;
+		}
+		return -1;
+	}
+
+	public int getQuantity(){
+		return quantity;
+	}
+
 }

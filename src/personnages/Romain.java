@@ -1,10 +1,13 @@
 package personnages;
 
 public class Romain extends Personnage{
+
+
 	
 	protected Romain(String name, int strength) {
 		
 		super(name,strength);
+
 		
 	}
 	
@@ -13,5 +16,11 @@ public class Romain extends Personnage{
 		return "romain";
 		
 	}
+
+
+
+
+
+
 	
 }

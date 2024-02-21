@@ -28,9 +28,11 @@ public abstract class Personnage {
 	public abstract String getAuteur();
 	
 	public void frapper(Personnage personnage) {
-		
-		System.out.println("Le " + this.getAuteur() + " " + this.getName() + " envoie un grand coup dans la mâchoire du " + personnage.getAuteur()+ " " +personnage.getName() + ".");
-		personnage.recevoirCoup(this.strength/3);
+		if (this.getStrength() != 0) {
+
+			System.out.println("Le " + this.getAuteur() + " " + this.getName() + " envoie un grand coup de force " + this.strength + " au " + personnage.getAuteur() + " " + personnage.getName() + ".");
+			personnage.recevoirCoup(this.strength);
+		}
 		
 	}
 	
@@ -42,6 +44,18 @@ public abstract class Personnage {
 			strength = 0;
 			this.parler("J’abandonne…");
 		}
+	}
+
+	public int getStrength(){
+		return this.strength;
+	}
+
+	public void setStrength(int newStrength){
+		strength = newStrength;
+	}
+
+	public boolean isPersonnageKnockedOut(){
+		return this.getStrength()==0;
 	}
 	
 	

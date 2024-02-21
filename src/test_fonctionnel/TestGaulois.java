@@ -7,9 +7,9 @@ public class TestGaulois {
 
 	public static void main(String[] args) {
 		
-		Gaulois Vercingétorix = new Gaulois("Vercingétorix", 5);
+		Gaulois Vercingetorix = new Gaulois("VercingÃ©torix", 5);
 		
-		Village village = new Village(Vercingétorix);
+		Village village = new Village(Vercingetorix);
 		
 		Soldat minus = new Soldat("Minus", 6, Grade.SOLDAT);
 		
@@ -18,7 +18,7 @@ public class TestGaulois {
 		
 		village.ajouterGaulois(new Gaulois("Agecanonix", 1));
 		village.ajouterGaulois(new Gaulois("Assurancetourix", 2));
-		village.ajouterGaulois(new Gaulois("Astérix", 5));
+		village.ajouterGaulois(new Gaulois("Asterix", 5));
 		village.ajouterGaulois(new Gaulois("Obelix", 15));
 		village.ajouterGaulois(new Gaulois("Prolix", 2));
 		
@@ -38,6 +38,36 @@ public class TestGaulois {
 		village.changerChef(Abraracourcix);
 		camp.changerCommandant(Briseradius);
 		camp.changerCommandant(Chorus);
+
+
+		minus.useEquipment(Equipement.CASQUE);
+		minus.useEquipment(Equipement.PLASTRON);
+		minus.useEquipment(Equipement.BOUCLIER);
+
+
+		Druide Panoramix =  new Druide("Panoramix",1);
+		village.ajouterGaulois(Panoramix);
+		Panoramix.fabriquerPotion(3);
+		Panoramix.donnerPotion(village.getGaulois("Asterix"));
+		Panoramix.donnerPotion(village.getGaulois("Obelix"));
+		Panoramix.donnerPotion(village.getGaulois("Assurancetourix"));
+		Panoramix.donnerPotion(Abraracourcix);
+		Panoramix.donnerPotion(village.getGaulois("Agecanonix"));
+
+		village.getGaulois("Asterix").parler(" Bonjour Ã  tous ");
+		minus.parler("UN GAU... UN GAUGAU...");
+		while(!village.getGaulois("Asterix").isPersonnageKnockedOut() && !minus.isPersonnageKnockedOut()){
+			village.getGaulois("Asterix").frapper(minus);
+			minus.frapper(village.getGaulois("Asterix"));
+		}
+
+
+
+
+
+
+
+
 		
 	}
 
